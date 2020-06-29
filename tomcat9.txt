@@ -1,0 +1,84 @@
+<Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+  <GlobalNamingResources>
+    <Resource name="UserDatabase" auth="Container" type="org.apache.catalina.UserDatabase" description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory" pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+  
+  <Service name="Catalina80">
+	<Executor name="tomcatThreadPool80" namePrefix="catalina-exec-" maxThreads="1000" maxIdleTime="60000"  minSpareThreads="20"/>
+    <Connector port="80" protocol="org.apache.coyote.http11.Http11AprProtocol"
+			   executor="tomcatThreadPool80" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
+			   compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json,application/x-javascript"
+			   maxThreads="30000" minSpareThreads="512" enableLookups="false" acceptCount="35000"
+			   connectionTimeout="40000" disableUploadTimeout="true" URIEncoding="UTF-8" useBodyEncodingForURI="true" redirectPort="8443" />
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina80" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+      <Host name="localhost"  appBase="webapps80" unpackWARs="true" autoDeploy="true">
+        
+      </Host>
+    </Engine>
+  </Service>
+  
+  <Service name="Catalina81">
+	<Executor name="tomcatThreadPool81" namePrefix="catalina-exec-" maxThreads="1000" maxIdleTime="60000"  minSpareThreads="20"/>
+    <Connector port="81" protocol="org.apache.coyote.http11.Http11AprProtocol"
+			   executor="tomcatThreadPool81" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
+			   compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json,application/x-javascript"
+			   maxThreads="30000" minSpareThreads="512" enableLookups="false" acceptCount="35000"
+			   connectionTimeout="40000" disableUploadTimeout="true" URIEncoding="UTF-8" useBodyEncodingForURI="true" redirectPort="8443" />
+    <Connector port="8019" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina81" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+      <Host name="localhost"  appBase="webapps81" unpackWARs="true" autoDeploy="true">
+        
+      </Host>
+    </Engine>
+  </Service>
+  
+  <Service name="Catalina82">
+	<Executor name="tomcatThreadPool82" namePrefix="catalina-exec-" maxThreads="1000" maxIdleTime="60000"  minSpareThreads="20"/>
+    <Connector port="82" protocol="org.apache.coyote.http11.Http11AprProtocol"
+			   executor="tomcatThreadPool82" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
+			   compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json,application/x-javascript"
+			   maxThreads="30000" minSpareThreads="512" enableLookups="false" acceptCount="35000"
+			   connectionTimeout="40000" disableUploadTimeout="true" URIEncoding="UTF-8" useBodyEncodingForURI="true" redirectPort="8443" />
+    <Connector port="8029" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina82" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+      <Host name="localhost"  appBase="webapps82" unpackWARs="true" autoDeploy="true">
+        
+      </Host>
+    </Engine>
+  </Service>
+  
+  <Service name="Catalina83">
+	<Executor name="tomcatThreadPool83" namePrefix="catalina-exec-" maxThreads="1000" maxIdleTime="60000"  minSpareThreads="20"/>
+    <Connector port="83" protocol="org.apache.coyote.http11.Http11AprProtocol"
+			   executor="tomcatThreadPool83" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla, traviata"
+			   compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json,application/x-javascript"
+			   maxThreads="30000" minSpareThreads="512" enableLookups="false" acceptCount="35000"
+			   connectionTimeout="40000" disableUploadTimeout="true" URIEncoding="UTF-8" useBodyEncodingForURI="true" redirectPort="8443" />
+    <Connector port="8039" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina83" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+      <Host name="localhost"  appBase="webapps83" unpackWARs="true" autoDeploy="true">
+        
+      </Host>
+    </Engine>
+  </Service>
+  
+</Server>
